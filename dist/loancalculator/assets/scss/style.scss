@@ -1,0 +1,316 @@
+//
+// Variables
+// --------------------------------
+$purple: #B978C8;
+$red: #F27D86;
+$blue: #9379F8;
+$green: #71CF6E;
+$light-gray: #EAEFF3;
+$text-color-blue: #30304C;
+$text-color-gray: #807F91;
+
+$fallback: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI ,Roboto, "Fira Sans", Helvetica Neue, sans-serif;
+
+
+
+//
+// General styles
+// --------------------------------
+:root {
+  font: 400 18px/1.5 "Open Sans", $fallback;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, label {
+  font-family: "Nunito", $fallback;
+  font-weight: 700;
+  color: $text-color-blue;
+}
+
+h1, h2 {
+  line-height: 1.25;
+}
+
+p {
+  color: $text-color-gray;
+}
+
+html {
+  min-height: 100vh;
+  background: linear-gradient(to right bottom, $red, $purple, $blue) center/cover no-repeat;
+}
+
+
+
+//
+// The main wrapper
+// --------------------------------
+form {
+  width: 35rem;
+  margin: 3rem auto;
+  background-color: white;
+  border-radius: .5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+  text-align: center;
+  position: relative;
+  min-height: 25rem;
+  animation: fade-in .4s ease-out forwards;
+}
+
+
+
+//
+// Buttons
+// --------------------------------
+.button {
+  border: none;
+  border-radius: .3rem;
+  padding: .7rem 2.5rem;
+  color: white;
+  font-size: 85%;
+  box-shadow: 0 17px 15px -10px rgba(0, 0, 0, .2);
+  outline: none;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  font-family: inherit;
+  transition: box-shadow .1s linear;
+  
+  &.is-purple {
+    background: linear-gradient(to right, #A972CF, #7052AC);
+    
+    &:hover {
+      background: linear-gradient(to right, darken(#A972CF, 5%), darken(#7052AC, 5%));
+      box-shadow: 0 24px 20px -15px rgba(0, 0, 0, 0.2);
+    }
+    
+    &:focus {
+      background: linear-gradient(to right, darken(#A972CF, 10%), darken(#7052AC, 10%));
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  &.is-gray {
+    background: linear-gradient(to right, $light-gray, darken($light-gray, 10%));
+    color: $text-color-gray;
+    
+    &:hover {
+      background: linear-gradient(to right, darken($light-gray, 5%), darken($light-gray, 15%));
+      box-shadow: 0 24px 20px -15px rgba(0, 0, 0, 0.2);
+      color: white;
+    }
+    
+    &:focus {
+      background: linear-gradient(to right, darken($light-gray, 10%), darken($light-gray, 20%));
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+      color: white;
+    }
+  }
+  
+  &.is-red {
+    background-color: $red;
+    
+    &:hover {
+      background-color: darken($red, 5%);
+      box-shadow: 0 24px 20px -15px rgba(0, 0, 0, 0.2);
+    }
+    
+    &:focus {
+      background-color: darken($red, 10%);
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    }
+  } 
+}
+
+.microphone {
+  background-color: white;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  color: $text-color-blue;
+  margin: 0;
+  border: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  transform: translateY(-1.75rem);
+  outline: none;
+  transition: all .1s linear;
+  
+  &:hover, &:focus {
+    background-color: #EAEFF3;
+    box-shadow: 0 13px 15px -5px rgba(0, 0, 0, .2);
+  }
+}
+
+
+
+//
+// Form elements
+// --------------------------------
+.form-group {
+  position: relative;
+}
+
+.form-help {
+  margin: 0;
+  font-size: 80%;
+  color: #C0C0C8;
+}
+
+.form-error {
+  margin: 0;
+  font-size: 80%;
+  color: $red;
+}
+
+.required {
+  color: $red;
+}
+
+.form-addon {
+  position: absolute;
+  right: 1rem;
+  top: .85rem;
+  color: $green;
+  opacity: 0;
+  transition: opacity .2s linear;
+}
+
+.form-control {
+  border: 1px solid #fff;
+  border-radius: .3rem;
+  padding: .8rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .14);
+  width: 100%;
+  outline: none;
+  margin-bottom: .4rem;
+  color: $text-color-gray;
+  font-family: inherit;
+  transition: box-shadow .1s linear;
+  
+  &:hover, &:focus {
+    box-shadow: 0 7px 15px -3px rgba(0, 0, 0, 0.2);
+  }
+  
+  &:valid + .form-addon {
+    opacity: 1;
+  }
+}
+
+label {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  display: block;
+}
+
+
+
+//
+// Layout
+// --------------------------------
+.container {
+  overflow: hidden;
+  
+  > .slider {
+    display: flex;
+    transition: transform .25s ease-out;
+  }
+}
+
+.section {
+  padding: 2rem;
+  flex: 0 0 35rem;
+}
+
+
+
+//
+// Progress Bar
+// --------------------------------
+#progress-bar {
+  width: 100%;
+  height: .2rem;
+  background-color: $light-gray;
+  position: relative;
+}
+
+#progress-bar-inner {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: width .2s ease-out;
+  background: linear-gradient(to right, $red, $purple);
+}
+
+
+
+//
+// Meter Bar
+// --------------------------------
+#password-strength-meter {
+  width: 70%;
+  background-color: $light-gray;
+  height: .3rem;
+  margin: 1rem auto;
+  
+  &[data-strength="1"] #password-strength-meter-inner {
+    width: 25%;
+    background-color: $red;
+  }
+  
+  &[data-strength="2"] #password-strength-meter-inner {
+    width: 50%;
+    background-color: orange;
+  }
+  
+  &[data-strength="3"] #password-strength-meter-inner {
+    width: 75%;
+    background-color: #C6B453;
+  }
+  
+  &[data-strength="4"] #password-strength-meter-inner {
+    width: 100%;
+    background-color: $green;
+  }
+}
+
+#password-strength-meter-inner {
+  background-color: transparent;
+  height: 100%;
+  transition: width .2s ease-out, background-color .1s linear;
+}
+
+
+
+//
+// Footer
+// --------------------------------
+#footer {
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  padding: 0 1rem;
+  font-size: 80%;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+}
+
+
+
+//
+// Keyframes
+// --------------------------------
+@keyframes fade-in {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
