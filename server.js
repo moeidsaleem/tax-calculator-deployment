@@ -6,7 +6,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 
-app.use(express.static(__dirname +'/dist'));
+app.use(express.static(__dirname +'/dist/myfinax'));
 
 app.listen(4202, ()=>{
     console.log(`running on 4202`)
