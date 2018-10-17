@@ -70253,6 +70253,893 @@ var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('6.1.7')
 
 /***/ }),
 
+/***/ "./node_modules/ngx-animate/lib/attention-seekers.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/ngx-animate/lib/attention-seekers.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var animations_1 = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+var utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/ngx-animate/lib/utils.js");
+exports.bounce = animations_1.animation([
+    animations_1.style({ transform: 'translate3d(0, 0, 0)' }),
+    animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+        animations_1.style({ transform: 'translate3d(0, 0, 0)', offset: 0.2 }),
+        animations_1.style({ transform: 'translate3d(0, -30px, 0)', offset: 0.4 }),
+        animations_1.style({ transform: 'translate3d(0, 0, 0)', offset: 0.53 }),
+        animations_1.style({ transform: 'translate3d(0, -15px, 0)', offset: 0.7 }),
+        animations_1.style({ transform: 'translate3d(0, -4px, 0)', offset: 0.9 }),
+        animations_1.style({ transform: 'translate3d(0, 0, 0)', offset: 1 }),
+    ])),
+], { params: { timing: utils_1.DEFAULT_TIMING, delay: 0 } });
+exports.flash = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+    animations_1.style({ opacity: 1 }),
+    animations_1.style({ opacity: 0 }),
+    animations_1.style({ opacity: 1 }),
+    animations_1.style({ opacity: 0 }),
+    animations_1.style({ opacity: 1 }),
+])), { params: { timing: utils_1.DEFAULT_TIMING, delay: 0 } });
+exports.pulse = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+    animations_1.style({ transform: 'scale3d(1, 1, 1)' }),
+    animations_1.style({ transform: 'scale3d({{ scale }}, {{ scale }}, {{ scale }})' }),
+    animations_1.style({ transform: 'scale3d(1, 1, 1)' }),
+])), { params: { scale: 1.25, timing: utils_1.DEFAULT_TIMING, delay: 0 } });
+exports.rubberBand = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+    animations_1.style({ transform: 'scale3d(1, 1, 1)', offset: 0 }),
+    animations_1.style({ transform: 'scale3d(1.25, 0.75, 1)', offset: 0.3 }),
+    animations_1.style({ transform: 'scale3d(0.75, 1.25, 1)', offset: 0.4 }),
+    animations_1.style({ transform: 'scale3d(1.15, 0.85, 1)', offset: 0.5 }),
+    animations_1.style({ transform: 'scale3d(.95, 1.05, 1)', offset: 0.65 }),
+    animations_1.style({ transform: 'scale3d(1.05, .95, 1)', offset: 0.75 }),
+    animations_1.style({ transform: 'scale3d(1, 1, 1)', offset: 1 }),
+])), { params: { timing: utils_1.DEFAULT_TIMING, delay: 0 } });
+exports.shake = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+    animations_1.style({ transform: 'translate3d(0, 0, 0)', offset: 0 }),
+    animations_1.style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.1 }),
+    animations_1.style({ transform: 'translate3d(10px, 0, 0)', offset: 0.2 }),
+    animations_1.style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.3 }),
+    animations_1.style({ transform: 'translate3d(10px, 0, 0)', offset: 0.4 }),
+    animations_1.style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.5 }),
+    animations_1.style({ transform: 'translate3d(10px, 0, 0)', offset: 0.6 }),
+    animations_1.style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.7 }),
+    animations_1.style({ transform: 'translate3d(10px, 0, 0)', offset: 0.8 }),
+    animations_1.style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.9 }),
+    animations_1.style({ transform: 'translate3d(0, 0, 0)', offset: 1 }),
+])), { params: { timing: utils_1.DEFAULT_TIMING, delay: 0 } });
+exports.swing = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+    animations_1.style({ transform: 'rotate3d(0, 0, 1, 15deg)', offset: 0.2 }),
+    animations_1.style({ transform: 'rotate3d(0, 0, 1, -10deg)', offset: 0.4 }),
+    animations_1.style({ transform: 'rotate3d(0, 0, 1, 5deg)', offset: 0.6 }),
+    animations_1.style({ transform: 'rotate3d(0, 0, 1, -5deg)', offset: 0.8 }),
+    animations_1.style({ transform: 'rotate3d(0, 0, 1, 0deg)', offset: 1 }),
+])), { params: { timing: utils_1.DEFAULT_TIMING, delay: 0 } });
+exports.tada = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+    animations_1.style({ transform: 'scale3d(1, 1, 1)', offset: 0 }),
+    animations_1.style({
+        transform: 'scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)',
+        offset: 0.1,
+    }),
+    animations_1.style({
+        transform: 'scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)',
+        offset: 0.2,
+    }),
+    animations_1.style({
+        transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)',
+        offset: 0.3,
+    }),
+    animations_1.style({
+        transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)',
+        offset: 0.4,
+    }),
+    animations_1.style({
+        transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)',
+        offset: 0.5,
+    }),
+    animations_1.style({
+        transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)',
+        offset: 0.6,
+    }),
+    animations_1.style({
+        transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)',
+        offset: 0.7,
+    }),
+    animations_1.style({
+        transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)',
+        offset: 0.8,
+    }),
+    animations_1.style({
+        transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)',
+        offset: 0.9,
+    }),
+    animations_1.style({ transform: 'scale3d(1, 1, 1)', offset: 1 }),
+])), { params: { timing: utils_1.DEFAULT_TIMING, delay: 0 } });
+exports.wobble = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+    animations_1.style({ transform: 'none', offset: 0 }),
+    animations_1.style({
+        transform: 'translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg)',
+        offset: 0.15,
+    }),
+    animations_1.style({
+        transform: 'translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg)',
+        offset: 0.3,
+    }),
+    animations_1.style({
+        transform: 'translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)',
+        offset: 0.45,
+    }),
+    animations_1.style({
+        transform: 'translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg)',
+        offset: 0.6,
+    }),
+    animations_1.style({
+        transform: 'translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg)',
+        offset: 0.75,
+    }),
+    animations_1.style({ transform: 'none', offset: 1 }),
+])), { params: { timing: utils_1.DEFAULT_TIMING, delay: 0 } });
+exports.jello = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+    animations_1.style({ transform: 'none', offset: 0 }),
+    animations_1.style({ transform: 'none', offset: 0.11 }),
+    animations_1.style({ transform: 'skewX(-12.5deg) skewY(-12.5deg)', offset: 0.22 }),
+    animations_1.style({ transform: 'skewX(6.25deg) skewY(6.25deg)', offset: 0.33 }),
+    animations_1.style({ transform: 'skewX(-3.125deg) skewY(-3.125deg)', offset: 0.44 }),
+    animations_1.style({ transform: 'skewX(1.5625deg) skewY(1.5625deg)', offset: 0.55 }),
+    animations_1.style({
+        transform: 'skewX(-0.78125deg) skewY(-0.78125deg)',
+        offset: 0.66,
+    }),
+    animations_1.style({
+        transform: 'skewX(0.390625deg) skewY(0.390625deg)',
+        offset: 0.77,
+    }),
+    animations_1.style({
+        transform: 'skewX(-0.1953125deg) skewY(-0.1953125deg)',
+        offset: 0.88,
+    }),
+    animations_1.style({ transform: 'none', offset: 1 }),
+])), { params: { timing: utils_1.DEFAULT_TIMING, delay: 0 } });
+
+
+/***/ }),
+
+/***/ "./node_modules/ngx-animate/lib/bouncing.js":
+/*!**************************************************!*\
+  !*** ./node_modules/ngx-animate/lib/bouncing.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var animations_1 = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+var utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/ngx-animate/lib/utils.js");
+exports.bounceIn = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s cubic-bezier(0.215, 0.610, 0.355, 1.000)', animations_1.keyframes([
+    animations_1.style({ opacity: 0, transform: 'scale3d(.3, .3, .3)', offset: 0 }),
+    animations_1.style({ transform: 'scale3d(1.1, 1.1, 1.1)', offset: 0.2 }),
+    animations_1.style({ transform: 'scale3d(.9, .9, .9)', offset: 0.4 }),
+    animations_1.style({
+        opacity: 1,
+        transform: 'scale3d(1.03, 1.03, 1.03)',
+        offset: 0.6,
+    }),
+    animations_1.style({ transform: 'scale3d(.97, .97, .97)', offset: 0.8 }),
+    animations_1.style({ opacity: 1, transform: 'scale3d(1, 1, 1)', offset: 1 }),
+])), { params: { timing: utils_1.DEFAULT_TIMING, delay: 0 } });
+function bounceInDirection(axis) {
+    var translate3d = utils_1.transformAxis(axis, 'translate3d');
+    return function (steps) {
+        var params = Object.assign({ timing: utils_1.DEFAULT_TIMING, delay: 0 }, steps);
+        return animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s cubic-bezier(0.215, 0.610, 0.355, 1.000)', animations_1.keyframes([
+            animations_1.style({ opacity: 0, transform: translate3d('a'), offset: 0 }),
+            animations_1.style({ opacity: 1, transform: translate3d('b'), offset: 0.6 }),
+            animations_1.style({ transform: translate3d('c'), offset: 0.75 }),
+            animations_1.style({ transform: translate3d('d'), offset: 0.9 }),
+            animations_1.style({ opacity: 1, transform: 'none', offset: 1 }),
+        ])), { params: params });
+    };
+}
+var bounceInY = bounceInDirection('y');
+var bounceInX = bounceInDirection('x');
+exports.bounceInDown = bounceInY({
+    a: '-3000px',
+    b: '25px',
+    c: '-10px',
+    d: '5px',
+});
+exports.bounceInUp = bounceInY({
+    a: '3000px',
+    b: '-25px',
+    c: '10px',
+    d: '-5px',
+});
+exports.bounceInLeft = bounceInX({
+    a: '-3000px',
+    b: '25px',
+    c: '-10px',
+    d: '5px',
+});
+exports.bounceInRight = bounceInX({
+    a: '3000px',
+    b: '-25px',
+    c: '10px',
+    d: '-5px',
+});
+exports.bounceOut = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+    animations_1.style({ transform: 'scale3d(.9, .9, .9)', offset: 0.2 }),
+    animations_1.style({
+        opacity: 1,
+        transform: 'scale3d({{ scale }}, {{ scale }}, {{ scale }})',
+        offset: 0.5,
+    }),
+    animations_1.style({
+        opacity: 1,
+        transform: 'scale3d({{ scale }}, {{ scale }}, {{ scale }})',
+        offset: 0.55,
+    }),
+    animations_1.style({ opacity: 0, transform: 'scale3d(.3, .3, .3)', offset: 1 }),
+])), { params: { timing: utils_1.DEFAULT_TIMING, delay: 0, scale: 1.1 } });
+function bounceOutDirection(axis) {
+    var translate3d = utils_1.transformAxis(axis, 'translate3d');
+    if (axis === 'y') {
+        return function (steps) {
+            var params = Object.assign({ timing: utils_1.DEFAULT_TIMING, delay: 0 }, steps);
+            return animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+                animations_1.style({ transform: translate3d('a'), offset: 0.2 }),
+                animations_1.style({ opacity: 1, transform: translate3d('b'), offset: 0.4 }),
+                animations_1.style({ opacity: 1, transform: translate3d('c'), offset: 0.45 }),
+                animations_1.style({ opacity: 0, transform: translate3d('d'), offset: 1 }),
+            ])), { params: params });
+        };
+    }
+    return function (steps) {
+        var params = Object.assign({ timing: utils_1.DEFAULT_TIMING, delay: 0 }, steps);
+        return animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+            animations_1.style({ opacity: 1, transform: translate3d('a'), offset: 0.2 }),
+            animations_1.style({ opacity: 0, transform: translate3d('b'), offset: 1 }),
+        ])), { params: params });
+    };
+}
+var bounceOutY = bounceOutDirection('y');
+var bounceOutX = bounceOutDirection('x');
+exports.bounceOutDown = bounceOutY({
+    a: '10px',
+    b: '-20px',
+    c: '-20px',
+    d: '2000px',
+});
+exports.bounceOutUp = bounceOutY({
+    a: '-10px',
+    b: '20px',
+    c: '20px',
+    d: '-2000px',
+});
+exports.bounceOutLeft = bounceOutX({
+    a: '20px',
+    b: '-2000px',
+});
+exports.bounceOutRight = bounceOutX({
+    a: '-20px',
+    b: '2000px',
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/ngx-animate/lib/fading.js":
+/*!************************************************!*\
+  !*** ./node_modules/ngx-animate/lib/fading.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var animations_1 = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+var utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/ngx-animate/lib/utils.js");
+function fade(fromOpacity, toOpacity) {
+    return function (axis) {
+        var translate3d = utils_1.transformAxis(axis, 'translate3d');
+        return function (steps) {
+            var params = Object.assign({
+                timing: utils_1.DEFAULT_TIMING,
+                delay: 0,
+                fromOpacity: fromOpacity,
+                toOpacity: toOpacity,
+            }, steps);
+            return animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+                animations_1.style({
+                    opacity: '{{ fromOpacity }}',
+                    transform: translate3d('a'),
+                    offset: 0,
+                }),
+                animations_1.style({
+                    opacity: '{{ toOpacity }}',
+                    transform: translate3d('b'),
+                    offset: 1,
+                }),
+            ])), { params: params });
+        };
+    };
+}
+var fadeInDirection = fade(0, 1);
+var fadeInX = fadeInDirection('x');
+var fadeInY = fadeInDirection('y');
+exports.fadeIn = fadeInX({ a: 0, b: 0 });
+exports.fadeInDown = fadeInY({ a: '-100%', b: 0 });
+exports.fadeInUp = fadeInY({ a: '100%', b: 0 });
+exports.fadeInLeft = fadeInX({ a: '-100%', b: 0 });
+exports.fadeInRight = fadeInX({ a: '100%', b: 0 });
+var fadeOutDirection = fade(1, 0);
+var fadeOutX = fadeOutDirection('x');
+var fadeOutY = fadeOutDirection('y');
+exports.fadeOut = fadeOutX({ a: 0, b: 0 });
+exports.fadeOutDown = fadeOutY({ a: '-100%', b: 0 });
+exports.fadeOutUp = fadeOutY({ a: '100%', b: 0 });
+exports.fadeOutLeft = fadeOutX({ a: '-100%', b: 0 });
+exports.fadeOutRight = fadeOutX({ a: '100%', b: 0 });
+var slideDirection = fade(1, 1);
+var slideX = slideDirection('x');
+var slideY = slideDirection('y');
+exports.slideInUp = slideY({ a: '-100%', b: 0 });
+exports.slideInDown = slideY({ a: '100%', b: 0 });
+exports.slideInLeft = slideX({ a: '-100%', b: 0 });
+exports.slideInRight = slideX({ a: '100%', b: 0 });
+exports.slideOutUp = slideY({ a: 0, b: '-100%' });
+exports.slideOutDown = slideY({ a: 0, b: '100%' });
+exports.slideOutLeft = slideX({ a: 0, b: '-100%' });
+exports.slideOutRight = slideX({ a: 0, b: '100%' });
+
+
+/***/ }),
+
+/***/ "./node_modules/ngx-animate/lib/flippers.js":
+/*!**************************************************!*\
+  !*** ./node_modules/ngx-animate/lib/flippers.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var animations_1 = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+var utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/ngx-animate/lib/utils.js");
+exports.flip = animations_1.animation([
+    animations_1.style({ 'backface-visibility': 'visible' }),
+    animations_1.animate('{{ timing }}s {{ delay }}s ease-out', animations_1.keyframes([
+        animations_1.style({
+            transform: 'perspective(400px) rotate3d(0, 1, 0, -360deg)',
+            offset: 0,
+        }),
+        animations_1.style({
+            transform: 'perspective(400px) scale3d(1.5, 1.5, 1.5) rotate3d(0, 1, 0, -190deg)',
+            offset: 0.4,
+        }),
+        animations_1.style({
+            transform: 'perspective(400px) scale3d(1.5, 1.5, 1.5) rotate3d(0, 1, 0, -170deg)',
+            offset: 0.5,
+        }),
+        animations_1.style({
+            transform: 'perspective(400px) scale3d(.95, .95, .95)',
+            offset: 0.8,
+        }),
+        animations_1.style({
+            transform: 'perspective(400px)',
+            offset: 1,
+        }),
+    ])),
+], {
+    params: { timing: utils_1.DEFAULT_TIMING, delay: 0 },
+});
+function flipIn(rotateX, rotateY) {
+    var params = { timing: utils_1.DEFAULT_TIMING, delay: 0, rotateX: rotateX, rotateY: rotateY };
+    return animations_1.animation([
+        animations_1.style({ 'backface-visibility': 'visible' }),
+        animations_1.animate('{{ timing }}s {{ delay }}s ease-in', animations_1.keyframes([
+            animations_1.style({
+                opacity: 0,
+                transform: 'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 90deg)',
+                offset: 0,
+            }),
+            animations_1.style({
+                opacity: 1,
+                transform: 'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -20deg)',
+                offset: 0.4,
+            }),
+            animations_1.style({
+                transform: 'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 10deg)',
+                offset: 0.6,
+            }),
+            animations_1.style({
+                transform: 'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -5deg)',
+                offset: 0.8,
+            }),
+            animations_1.style({
+                transform: 'perspective(400px) rotate3d(0, 0, 0, 0)',
+                offset: 1,
+            }),
+        ])),
+    ], { params: params });
+}
+exports.flipInX = flipIn(1, 0);
+exports.flipInY = flipIn(0, 1);
+function flipOut(rotateX, rotateY) {
+    var params = { timing: utils_1.DEFAULT_TIMING, delay: 0, rotateX: rotateX, rotateY: rotateY };
+    return animations_1.animation([
+        animations_1.style({ 'backface-visibility': 'visible' }),
+        animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+            animations_1.style({
+                transform: 'perspective(400px)',
+                offset: 0,
+            }),
+            animations_1.style({
+                opacity: 1,
+                transform: 'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -20deg)',
+                offset: 0.3,
+            }),
+            animations_1.style({
+                opacity: 0,
+                transform: 'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 90deg)',
+                offset: 1,
+            }),
+        ])),
+    ], { params: params });
+}
+exports.flipOutX = flipOut(1, 0);
+exports.flipOutY = flipOut(0, 1);
+
+
+/***/ }),
+
+/***/ "./node_modules/ngx-animate/lib/index.js":
+/*!***********************************************!*\
+  !*** ./node_modules/ngx-animate/lib/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var attention_seekers_1 = __webpack_require__(/*! ./attention-seekers */ "./node_modules/ngx-animate/lib/attention-seekers.js");
+exports.bounce = attention_seekers_1.bounce;
+exports.flash = attention_seekers_1.flash;
+exports.pulse = attention_seekers_1.pulse;
+exports.rubberBand = attention_seekers_1.rubberBand;
+exports.shake = attention_seekers_1.shake;
+exports.swing = attention_seekers_1.swing;
+exports.tada = attention_seekers_1.tada;
+exports.wobble = attention_seekers_1.wobble;
+exports.jello = attention_seekers_1.jello;
+var bouncing_1 = __webpack_require__(/*! ./bouncing */ "./node_modules/ngx-animate/lib/bouncing.js");
+exports.bounceIn = bouncing_1.bounceIn;
+exports.bounceInDown = bouncing_1.bounceInDown;
+exports.bounceInLeft = bouncing_1.bounceInLeft;
+exports.bounceInRight = bouncing_1.bounceInRight;
+exports.bounceInUp = bouncing_1.bounceInUp;
+exports.bounceOut = bouncing_1.bounceOut;
+exports.bounceOutDown = bouncing_1.bounceOutDown;
+exports.bounceOutLeft = bouncing_1.bounceOutLeft;
+exports.bounceOutRight = bouncing_1.bounceOutRight;
+exports.bounceOutUp = bouncing_1.bounceOutUp;
+var fading_1 = __webpack_require__(/*! ./fading */ "./node_modules/ngx-animate/lib/fading.js");
+exports.fadeIn = fading_1.fadeIn;
+exports.fadeInDown = fading_1.fadeInDown;
+exports.fadeInUp = fading_1.fadeInUp;
+exports.fadeInLeft = fading_1.fadeInLeft;
+exports.fadeInRight = fading_1.fadeInRight;
+exports.fadeOut = fading_1.fadeOut;
+exports.fadeOutDown = fading_1.fadeOutDown;
+exports.fadeOutUp = fading_1.fadeOutUp;
+exports.fadeOutLeft = fading_1.fadeOutLeft;
+exports.fadeOutRight = fading_1.fadeOutRight;
+exports.slideInDown = fading_1.slideInDown;
+exports.slideInUp = fading_1.slideInUp;
+exports.slideInLeft = fading_1.slideInLeft;
+exports.slideInRight = fading_1.slideInRight;
+exports.slideOutDown = fading_1.slideOutDown;
+exports.slideOutUp = fading_1.slideOutUp;
+exports.slideOutLeft = fading_1.slideOutLeft;
+exports.slideOutRight = fading_1.slideOutRight;
+var flippers_1 = __webpack_require__(/*! ./flippers */ "./node_modules/ngx-animate/lib/flippers.js");
+exports.flip = flippers_1.flip;
+exports.flipInX = flippers_1.flipInX;
+exports.flipInY = flippers_1.flipInY;
+exports.flipOutX = flippers_1.flipOutX;
+exports.flipOutY = flippers_1.flipOutY;
+var lightSpeed_1 = __webpack_require__(/*! ./lightSpeed */ "./node_modules/ngx-animate/lib/lightSpeed.js");
+exports.lightSpeedIn = lightSpeed_1.lightSpeedIn;
+exports.lightSpeedOut = lightSpeed_1.lightSpeedOut;
+var rotate_1 = __webpack_require__(/*! ./rotate */ "./node_modules/ngx-animate/lib/rotate.js");
+exports.rotateIn = rotate_1.rotateIn;
+exports.rotateInDownLeft = rotate_1.rotateInDownLeft;
+exports.rotateInDownRight = rotate_1.rotateInDownRight;
+exports.rotateInUpLeft = rotate_1.rotateInUpLeft;
+exports.rotateInUpRight = rotate_1.rotateInUpRight;
+exports.rotateOut = rotate_1.rotateOut;
+exports.rotateOutDownLeft = rotate_1.rotateOutDownLeft;
+exports.rotateOutDownRight = rotate_1.rotateOutDownRight;
+exports.rotateOutUpLeft = rotate_1.rotateOutUpLeft;
+exports.rotateOutUpRight = rotate_1.rotateOutUpRight;
+var specials_1 = __webpack_require__(/*! ./specials */ "./node_modules/ngx-animate/lib/specials.js");
+exports.hinge = specials_1.hinge;
+exports.jackInTheBox = specials_1.jackInTheBox;
+exports.rollIn = specials_1.rollIn;
+exports.rollOut = specials_1.rollOut;
+var zooming_1 = __webpack_require__(/*! ./zooming */ "./node_modules/ngx-animate/lib/zooming.js");
+exports.zoomIn = zooming_1.zoomIn;
+exports.zoomInDown = zooming_1.zoomInDown;
+exports.zoomInUp = zooming_1.zoomInUp;
+exports.zoomInLeft = zooming_1.zoomInLeft;
+exports.zoomInRight = zooming_1.zoomInRight;
+exports.zoomOut = zooming_1.zoomOut;
+exports.zoomOutDown = zooming_1.zoomOutDown;
+exports.zoomOutUp = zooming_1.zoomOutUp;
+exports.zoomOutLeft = zooming_1.zoomOutLeft;
+exports.zoomOutRight = zooming_1.zoomOutRight;
+
+
+/***/ }),
+
+/***/ "./node_modules/ngx-animate/lib/lightSpeed.js":
+/*!****************************************************!*\
+  !*** ./node_modules/ngx-animate/lib/lightSpeed.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var animations_1 = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+var utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/ngx-animate/lib/utils.js");
+exports.lightSpeedIn = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+    animations_1.style({
+        opacity: 0,
+        transform: 'translate3d(100%, 0, 0) skewX(-30deg)',
+        offset: 0,
+    }),
+    animations_1.style({
+        opacity: 1,
+        transform: 'translate3d(0, 0, 0) skewX(0)',
+        offset: 1,
+    }),
+])), {
+    params: { timing: utils_1.DEFAULT_TIMING, delay: 0 },
+});
+exports.lightSpeedOut = animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s ease-out', animations_1.keyframes([
+    animations_1.style({
+        opacity: 1,
+        offset: 0,
+    }),
+    animations_1.style({
+        opacity: 0,
+        transform: 'translate3d(100%, 0, 0) skewX(30deg)',
+        offset: 1,
+    }),
+])), {
+    params: { timing: utils_1.DEFAULT_TIMING, delay: 0 },
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/ngx-animate/lib/rotate.js":
+/*!************************************************!*\
+  !*** ./node_modules/ngx-animate/lib/rotate.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var animations_1 = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+var utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/ngx-animate/lib/utils.js");
+function rotate(fromOpacity, toOpacity) {
+    var isIn = fromOpacity <= toOpacity;
+    return function (origin) {
+        return function (degrees) {
+            var params = {
+                timing: utils_1.DEFAULT_TIMING,
+                delay: 0,
+                fromOpacity: fromOpacity,
+                toOpacity: toOpacity,
+                origin: origin,
+                degrees: degrees,
+            };
+            return animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+                animations_1.style({
+                    'transform-origin': '{{ origin }}',
+                    opacity: '{{ fromOpacity }}',
+                    transform: isIn ? 'rotate3d(0, 0, 1, {{ degrees }})' : 'none',
+                    offset: 0,
+                }),
+                animations_1.style({
+                    'transform-origin': '{{ origin }}',
+                    opacity: '{{ toOpacity }}',
+                    transform: isIn ? 'none' : 'rotate3d(0, 0, 1, {{ degrees }})',
+                    offset: 1,
+                }),
+            ])), { params: params });
+        };
+    };
+}
+var rotateInDirection = rotate(0, 1);
+var rotateInLeft = rotateInDirection('left bottom');
+var rotateInRight = rotateInDirection('right bottom');
+exports.rotateIn = rotateInDirection('center')('-200deg');
+exports.rotateInDownLeft = rotateInLeft('-45deg');
+exports.rotateInDownRight = rotateInRight('45deg');
+exports.rotateInUpLeft = rotateInLeft('45deg');
+exports.rotateInUpRight = rotateInRight('-90deg');
+var rotateOutDirection = rotate(1, 0);
+var rotateOutLeft = rotateOutDirection('left bottom');
+var rotateOutRight = rotateOutDirection('right bottom');
+exports.rotateOut = rotateOutDirection('center')('200deg');
+exports.rotateOutDownLeft = rotateOutLeft('45deg');
+exports.rotateOutDownRight = rotateOutRight('-45deg');
+exports.rotateOutUpLeft = rotateOutLeft('-45deg');
+exports.rotateOutUpRight = rotateOutRight('90deg');
+
+
+/***/ }),
+
+/***/ "./node_modules/ngx-animate/lib/specials.js":
+/*!**************************************************!*\
+  !*** ./node_modules/ngx-animate/lib/specials.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var animations_1 = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+var utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/ngx-animate/lib/utils.js");
+exports.hinge = animations_1.animation([
+    animations_1.style({ 'transform-origin': 'top left' }),
+    animations_1.animate('{{ timing }}s {{ delay }}s ease-in-out', animations_1.keyframes([
+        animations_1.style({
+            transform: 'rotate3d(0, 0, 1, 80deg)',
+            offset: 0.2,
+        }),
+        animations_1.style({
+            transform: 'rotate3d(0, 0, 1, 60deg)',
+            offset: 0.4,
+        }),
+        animations_1.style({
+            transform: 'rotate3d(0, 0, 1, 80deg)',
+            offset: 0.6,
+        }),
+        animations_1.style({
+            opacity: 1,
+            transform: 'rotate3d(0, 0, 1, 60deg)',
+            offset: 0.8,
+        }),
+        animations_1.style({
+            opacity: 0,
+            transform: 'translate3d(0, 700px, 0)',
+            offset: 1,
+        }),
+    ])),
+], {
+    params: { timing: utils_1.DEFAULT_TIMING, delay: 0 },
+});
+exports.jackInTheBox = animations_1.animation([
+    animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+        animations_1.style({
+            opacity: 0,
+            transform: 'scale(0.1) rotate(30deg)',
+            'transform-origin': 'center bottom',
+            offset: 0,
+        }),
+        animations_1.style({
+            opacity: 0.5,
+            transform: 'rotate(-10deg)',
+            offset: 0.5,
+        }),
+        animations_1.style({
+            opacity: 0.7,
+            transform: 'rotate(3deg)',
+            offset: 0.7,
+        }),
+        animations_1.style({
+            opacity: 1,
+            transform: 'scale(1)',
+            offset: 1,
+        }),
+    ])),
+], {
+    params: { timing: utils_1.DEFAULT_TIMING, delay: 0 },
+});
+exports.rollIn = animations_1.animation([
+    animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+        animations_1.style({
+            opacity: 0,
+            transform: 'translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg)',
+            offset: 0,
+        }),
+        animations_1.style({
+            opacity: 1,
+            transform: 'none',
+            offset: 1,
+        }),
+    ])),
+], {
+    params: { timing: utils_1.DEFAULT_TIMING, delay: 0 },
+});
+exports.rollOut = animations_1.animation([
+    animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+        animations_1.style({
+            opacity: 1,
+            offset: 0,
+        }),
+        animations_1.style({
+            opacity: 0,
+            transform: 'translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg)',
+            offset: 1,
+        }),
+    ])),
+], {
+    params: { timing: utils_1.DEFAULT_TIMING, delay: 0 },
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/ngx-animate/lib/utils.js":
+/*!***********************************************!*\
+  !*** ./node_modules/ngx-animate/lib/utils.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function transformAxis(axis, name) {
+    return function (letter) {
+        return axis === 'x'
+            ? name + "({{ " + letter + " }}, 0, 0)"
+            : name + "(0, {{ " + letter + " }}, 0)";
+    };
+}
+exports.transformAxis = transformAxis;
+exports.DEFAULT_TIMING = 1;
+
+
+/***/ }),
+
+/***/ "./node_modules/ngx-animate/lib/zooming.js":
+/*!*************************************************!*\
+  !*** ./node_modules/ngx-animate/lib/zooming.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var animations_1 = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+var utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/ngx-animate/lib/utils.js");
+exports.zoomIn = animations_1.animation([
+    animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+        animations_1.style({
+            opacity: 0,
+            transform: 'scale3d(.3, .3, .3)',
+            offset: 0,
+        }),
+        animations_1.style({
+            opacity: 1,
+            transform: 'scale3d(1, 1, 1)',
+            offset: 0.5,
+        }),
+    ])),
+], {
+    params: { timing: utils_1.DEFAULT_TIMING, delay: 0 },
+});
+function zoomInDirection(axis) {
+    var translate3d = utils_1.transformAxis(axis, 'translate3d');
+    return function (steps) {
+        var params = Object.assign({ timing: utils_1.DEFAULT_TIMING, delay: 0 }, steps);
+        return animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)', animations_1.keyframes([
+            animations_1.style({
+                opacity: 0,
+                transform: "scale3d(.1, .1, .1) " + translate3d('a'),
+                offset: 0,
+            }),
+            animations_1.style({
+                opacity: 1,
+                transform: "scale3d(.475, .475, .475) " + translate3d('b'),
+                offset: 0.6,
+            }),
+        ])), { params: params });
+    };
+}
+var zoomInY = zoomInDirection('y');
+var zoomInX = zoomInDirection('x');
+exports.zoomInDown = zoomInY({
+    a: '-1000px',
+    b: '10px',
+});
+exports.zoomInUp = zoomInY({
+    a: '1000px',
+    b: '-10px',
+});
+exports.zoomInLeft = zoomInX({
+    a: '-1000px',
+    b: '10px',
+});
+exports.zoomInRight = zoomInX({
+    a: '1000px',
+    b: '-10px',
+});
+exports.zoomOut = animations_1.animation([
+    animations_1.animate('{{ timing }}s {{ delay }}s', animations_1.keyframes([
+        animations_1.style({
+            opacity: 1,
+            offset: 0,
+        }),
+        animations_1.style({
+            opacity: 0,
+            transform: 'scale3d(.3, .3, .3)',
+            offset: 0.5,
+        }),
+        animations_1.style({
+            opacity: 0,
+            offset: 1,
+        }),
+    ])),
+], {
+    params: { timing: utils_1.DEFAULT_TIMING, delay: 0 },
+});
+function zoomOutDirection(axis) {
+    var translate3d = utils_1.transformAxis(axis, 'translate3d');
+    return function (steps) {
+        var params = Object.assign({ timing: utils_1.DEFAULT_TIMING, delay: 0 }, steps);
+        return animations_1.animation(animations_1.animate('{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)', animations_1.keyframes([
+            animations_1.style({
+                opacity: 1,
+                transform: "scale3d(.475, .475, .475) " + translate3d('a'),
+                offset: 0.4,
+            }),
+            animations_1.style({
+                opacity: 0,
+                transform: "scale3d(.1, .1, .1) " + translate3d('b'),
+                offset: 1,
+            }),
+        ])), { params: params });
+    };
+}
+var zoomOutY = zoomOutDirection('y');
+var zoomOutX = zoomOutDirection('x');
+exports.zoomOutDown = zoomOutY({
+    a: '-60px',
+    b: '2000px',
+});
+exports.zoomOutUp = zoomOutY({
+    a: '60px',
+    b: '-2000px',
+});
+exports.zoomOutLeft = zoomOutX({
+    a: '42px',
+    b: '-2000px',
+});
+exports.zoomOutRight = zoomOutX({
+    a: '-42px',
+    b: '2000px',
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/rxjs/_esm5/index.js":
 /*!******************************************!*\
   !*** ./node_modules/rxjs/_esm5/index.js ***!
